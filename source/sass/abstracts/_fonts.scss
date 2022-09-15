@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "OfficinaSans";
+  src: url("../fonts/OfficinaSansBook.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OfficinaSans";
+  src: url("../fonts/OfficinaSansMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OfficinaSans";
+  src: url("../fonts/OfficinaSansBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OfficinaSans";
+  src: url("../fonts/OfficinaSansBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Verdana";
+  src: url("../fonts/Verdana.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Verdana";
+  src: url("../fonts/Verdana-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin Verdana() {
+  font-family: "Verdana";
+}
+
+@mixin Officina() {
+  font-family: "OfficinaSans";
+}

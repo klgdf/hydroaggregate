@@ -1,0 +1,20 @@
+.overlay.hidden.menu-mob#menu
+	.overflow
+		.menu__box.overflow__box
+			.overflow__box_close.e_menu_close
+			.menu-row
+				a.header-logo(href="main.html")
+					h1 Cozy House
+					p Shelter for pets in Boston
+			.menu-nav
+				if(main === true)
+					a.menu-nav__item(href="main.html").active About the shelter
+					a.menu-nav__item(href="pets.html") Our pets
+					a.menu-nav__item(href="#help") Help the shelter
+				else
+					a.menu-nav__item(href="main.html") About the shelter
+					a.menu-nav__item(href="pets.html").active Our pets
+					a.menu-nav__item(href="main.html#help") Help the shelter
+				a.menu-nav__item(href="#contacts") Contacts
+		.overflow__close.e_menu_close
+
