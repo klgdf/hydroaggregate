@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG stack preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+
+<!--
+
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-arrow-dims { width: 17px; height: 29px; }
+	.svg-bg_motivator-dims { width: 1028px; height: 189px; }
+	.svg-chart-dims { width: 181px; height: 181px; }
+	.svg-close-dims { width: 24px; height: 24px; }
+	.svg-logo-dims { width: 217px; height: 47px; }
+	.svg-logo-footer-dims { width: 146px; height: 96px; }
+	.svg-logo-inner-dims { width: 321px; height: 68px; }
+	.svg-logo-inner-hover-dims { width: 321px; height: 68px; }
+	.svg-logo-mob-dims { width: 157px; height: 28px; }
+	.svg-logo-motiv-dims { width: 156px; height: 132px; }
+	.svg-menu-dims { width: 24px; height: 24px; }
+	.svg-menu-hover-dims { width: 24px; height: 24px; }
+	.svg-shevron-dims { width: 9px; height: 6px; }
+	.svg-shevron-black-dims { width: 9px; height: 6px; }
+	.svg-shevron-blue-dims { width: 9px; height: 6px; }
+	.svg-shevron-hover-dims { width: 9px; height: 6px; }
+	.svg-whatsapp-dims { width: 32px; height: 33px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG stack preview</h1>
+			<p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+
+-->
+
+			<ul>
+
+				<li title="arrow">
+					<div class="icon-box">
+
+						<!-- arrow -->
+						<img src="icons/icons.svg#arrow" class="svg-arrow-dims" alt="arrow"/>
+
+					</div>
+					<h2>arrow</h2>
+				</li>
+				<li title="bg_motivator">
+					<div class="icon-box">
+
+						<!-- bg_motivator -->
+						<img src="icons/icons.svg#bg_motivator" class="svg-bg_motivator-dims" alt="bg_motivator"/>
+
+					</div>
+					<h2>bg_motivator</h2>
+				</li>
+				<li title="chart">
+					<div class="icon-box">
+
+						<!-- chart -->
+						<img src="icons/icons.svg#chart" class="svg-chart-dims" alt="chart"/>
+
+					</div>
+					<h2>chart</h2>
+				</li>
+				<li title="close">
+					<div class="icon-box">
+
+						<!-- close -->
+						<img src="icons/icons.svg#close" class="svg-close-dims" alt="close"/>
+
+					</div>
+					<h2>close</h2>
+				</li>
+				<li title="logo">
+					<div class="icon-box">
+
+						<!-- logo -->
+						<img src="icons/icons.svg#logo" class="svg-logo-dims" alt="logo"/>
+
+					</div>
+					<h2>logo</h2>
+				</li>
+				<li title="logo-footer">
+					<div class="icon-box">
+
+						<!-- logo-footer -->
+						<img src="icons/icons.svg#logo-footer" class="svg-logo-footer-dims" alt="logo-footer"/>
+
+					</div>
+					<h2>logo-footer</h2>
+				</li>
+				<li title="logo-inner">
+					<div class="icon-box">
+
+						<!-- logo-inner -->
+						<img src="icons/icons.svg#logo-inner" class="svg-logo-inner-dims" alt="logo-inner"/>
+
+					</div>
+					<h2>logo-inner</h2>
+				</li>
+				<li title="logo-inner-hover">
+					<div class="icon-box">
+
+						<!-- logo-inner-hover -->
+						<img src="icons/icons.svg#logo-inner-hover" class="svg-logo-inner-hover-dims" alt="logo-inner-hover"/>
+
+					</div>
+					<h2>logo-inner-hover</h2>
+				</li>
+				<li title="logo-mob">
+					<div class="icon-box">
+
+						<!-- logo-mob -->
+						<img src="icons/icons.svg#logo-mob" class="svg-logo-mob-dims" alt="logo-mob"/>
+
+					</div>
+					<h2>logo-mob</h2>
+				</li>
+				<li title="logo-motiv">
+					<div class="icon-box">
+
+						<!-- logo-motiv -->
+						<img src="icons/icons.svg#logo-motiv" class="svg-logo-motiv-dims" alt="logo-motiv"/>
+
+					</div>
+					<h2>logo-motiv</h2>
+				</li>
+				<li title="menu">
+					<div class="icon-box">
+
+						<!-- menu -->
+						<img src="icons/icons.svg#menu" class="svg-menu-dims" alt="menu"/>
+
+					</div>
+					<h2>menu</h2>
+				</li>
+				<li title="menu-hover">
+					<div class="icon-box">
+
+						<!-- menu-hover -->
+						<img src="icons/icons.svg#menu-hover" class="svg-menu-hover-dims" alt="menu-hover"/>
+
+					</div>
+					<h2>menu-hover</h2>
+				</li>
+				<li title="shevron">
+					<div class="icon-box">
+
+						<!-- shevron -->
+						<img src="icons/icons.svg#shevron" class="svg-shevron-dims" alt="shevron"/>
+
+					</div>
+					<h2>shevron</h2>
+				</li>
+				<li title="shevron-black">
+					<div class="icon-box">
+
+						<!-- shevron-black -->
+						<img src="icons/icons.svg#shevron-black" class="svg-shevron-black-dims" alt="shevron-black"/>
+
+					</div>
+					<h2>shevron-black</h2>
+				</li>
+				<li title="shevron-blue">
+					<div class="icon-box">
+
+						<!-- shevron-blue -->
+						<img src="icons/icons.svg#shevron-blue" class="svg-shevron-blue-dims" alt="shevron-blue"/>
+
+					</div>
+					<h2>shevron-blue</h2>
+				</li>
+				<li title="shevron-hover">
+					<div class="icon-box">
+
+						<!-- shevron-hover -->
+						<img src="icons/icons.svg#shevron-hover" class="svg-shevron-hover-dims" alt="shevron-hover"/>
+
+					</div>
+					<h2>shevron-hover</h2>
+				</li>
+				<li title="whatsapp">
+					<div class="icon-box">
+
+						<!-- whatsapp -->
+						<img src="icons/icons.svg#whatsapp" class="svg-whatsapp-dims" alt="whatsapp"/>
+
+					</div>
+					<h2>whatsapp</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Mon, 26 Sep 2022 12:09:31 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>
