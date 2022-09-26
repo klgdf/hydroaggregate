@@ -888,7 +888,7 @@ body {
   padding: 50px 0;
 }
 
-.section:last-child {
+.section-last {
   padding-bottom: 50px;
 }
 
@@ -3211,6 +3211,14 @@ button.swiper-pagination-bullet {
     margin: 0 0 14px;
   }
 
+  .screen-content.type-2 .screen-content__img iframe {
+    height: 315px;
+  }
+
+  .screen-content.type-3 .screen-content__img iframe {
+    height: 315px;
+  }
+
   .screen-content.type-4 .screen-content__row {
     padding: 0;
     border-radius: 0;
@@ -3262,7 +3270,7 @@ button.swiper-pagination-bullet {
     padding: 18px 0;
   }
 
-  .section:last-child {
+  .section-last {
     padding-bottom: 18px;
   }
 
@@ -3482,6 +3490,7 @@ button.swiper-pagination-bullet {
     display: flex;
     overflow: auto;
     padding-bottom: 8px;
+    padding-right: 16px;
   }
 
   .screen-12__item {
