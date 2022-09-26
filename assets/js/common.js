@@ -17,45 +17,58 @@ function ClickSelector(element, className) {
   }
 }
 
+var burger_status = ''; // '' || 'active' || 'active-sub'
+
 function documentClicks() {
   document.addEventListener('click', function (e) {
 
-    // Все действия с этом блоке зависят от element
     let
       target = e.target,
       element = false;
 
-    // Пример на все случаи
-    // if (document.querySelector('.select')) {
-    //   element = ClickSelector(target, 'select');
-    //   if (element) {
-    //     #code...
-    //   } else {
-    //     selectClose();
-    //     document.querySelector('.selector').classList.remove('active');
-    //   }
-    // }
-
     if (document.querySelector('#nav')) {
       element = ClickSelector(target, 'e_toggle');
       if (element) {
-        modalToggle('nav');
-        element.classList.toggle('active');
+
+        if (burger_status === 'active-sub') {
+          burger_status = 'active';
+          modalClose('sub-menu');
+          element.classList.remove('active-sub');
+          return '';
+        }
+
+        if (burger_status === 'active') {
+          burger_status = '';
+          modalToggle('nav');
+          element.classList.toggle('active');
+          return '';
+        }
+
+        if (burger_status === '') {
+          burger_status = 'active';
+          modalOpen('nav');
+          element.classList.add('active');
+          return '';
+        }
+
+      } else {
+        if (!target.closest('#nav')) {
+          burger_status = '';
+          modalClose('nav');
+          document.querySelector('.mobile__burger').classList.remove('active');
+        }
       }
     }
 
     if (document.querySelector('#sub-menu')) {
       element = ClickSelector(target, 'toggle-btn');
       if (element) {
+        burger_status = 'active-sub';
         modalOpen('sub-menu');
         document.querySelector('.mobile__burger').classList.add('active-sub');
       }
-      element = ClickSelector(target, 'active-sub');
-      if (element) {
-        modalClose('sub-menu');
-        document.querySelector('.mobile__burger').classList.remove('active-sub');
-      }
     }
+
   });
 }
 
